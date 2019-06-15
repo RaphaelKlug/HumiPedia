@@ -1,21 +1,21 @@
 <?php
-    if(isset($_GET['query'])) {
+    if(!isset($_GET['query'])) {
         $query = $_GET['query'];
-        $pdo = new PDO("mysql:host=localhost;dbname=HumiPedia", 'read', '');
-        $query = "%$query%";
-
-        $statement = $pdo->prepare("SELECT id FROM plants WHERE LOWER(name) LIKE LOWER(:query)");
-        $statement->bindParam(':query', $query);
-
-        if ($statement->execute()) {
-            $results = $statement->fetchAll();
-        } else {
-            echo "Error at search.php:9";
-        }
-
     } else {
-        echo "<script>document.location='index.html';</script>";
-        die();
+        $query = '';
+    }
+
+    $query = $_GET['query'];
+    $pdo = new PDO("mysql:host=localhost;dbname=HumiPedia", 'read', '');
+    $query = "%$query%";
+
+    $statement = $pdo->prepare("SELECT id FROM plants WHERE LOWER(name) LIKE LOWER(:query)");
+    $statement->bindParam(':query', $query);
+
+    if ($statement->execute()) {
+        $results = $statement->fetchAll();
+    } else {
+        echo "Error at search.php:9";
     }
 
 
