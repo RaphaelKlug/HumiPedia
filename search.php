@@ -4,7 +4,7 @@
         $pdo = new PDO("mysql:host=localhost;dbname=HumiPedia", 'read', '');
         $query = "%$query%";
 
-        $statement = $pdo->prepare("SELECT id FROM plants WHERE name LIKE :query");
+        $statement = $pdo->prepare("SELECT id FROM plants WHERE LOWER(name) LIKE LOWER(:query)");
         $statement->bindParam(':query', $query);
 
         if ($statement->execute()) {
@@ -60,6 +60,8 @@
 </div>";
             }
             echo "</ul>";
+        } else {
+            echo "<h2>No results for your query</h2>";
         }
     ?>
 </div>
