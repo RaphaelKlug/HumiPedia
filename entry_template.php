@@ -6,4 +6,5 @@ $entry_template = "<div class=\"entry\">
     <br>
     <span class=\"name_latin\">\$name_latin</span>
     <p class=\"short_description\">\$short_description</p>
+    <span class=\"clear\"> </span>
 </div>";
