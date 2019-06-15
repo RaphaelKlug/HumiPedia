@@ -9,7 +9,6 @@
 
         if ($statement->execute()) {
             $results = $statement->fetchAll();
-            var_dump($results);
         } else {
             echo "Error at search.php:9";
         }
@@ -27,6 +26,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Search</title>
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 <header>
@@ -44,9 +44,9 @@
             echo "<ul>";
             foreach($results as $result) {
 
-                $name = $pdo->prepare("SELECT name FROM plant WHERE id == ".$result["id"]);
+                $name = $pdo->prepare("SELECT name FROM plants WHERE id = ".$result["id"]);
                 $name->execute();
-                $name = $name->fetchAll();
+                $name = $name->fetch()[0];
                 $name_german = $name_latin = $name;
                 $short_description = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At";
                 $plant_img = "https://thumbs-prod.si-cdn.com/EhgZKi9-p516XkxOdd2XD0JUMe8=/fit-in/1600x0/https://public-media.si-cdn.com/filer/cf/46/cf460bf8-3d66-4edc-b7a6-97195a15eb7a/lemonpot_edit.jpg";
