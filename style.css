@@ -1,0 +1,11 @@
+	.plant_img{width:5em; height:5em; float:left; margin-right:1em}
+	.name_german{font-weight:bold; line-height:1em; font-size:1.5em; font-family:arial}
+	.name_latin{font-weight:regular; line-height:1em; font-size:1.5em; font-family:arial}
+	.short_description{font-weight:regular; line-height:1em; font-size:1em; font-family:arial}
+	.entry{border:3px solid black; padding:1em; border-radius:2em; max-width:30em; background-color: rgb(100,170,30)}
+	.clear{clear:both; display: block}
+	li{list-style:none}
+	body{background-color: rgb(130,210,30)}
+	input{background-color: rgb(160,250,80); font-family:arial; padding:0.5em; border:3px solid black; border-radius:1em; font-size:1em}
+	h2{font-family:arial}
+	h1{font-family:arial}
