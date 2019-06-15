@@ -4,6 +4,7 @@
 	float: left;
 	margin-right: 1em;
 	border: 1px dotted #95a5a6;
+	object-fit: cover;
 }
 
 .name_german {

@@ -44,12 +44,19 @@
             echo "<ul>";
             foreach($results as $result) {
 
-                $name = $pdo->prepare("SELECT name FROM plants WHERE id = ".$result["id"]);
-                $name->execute();
-                $name = $name->fetch()[0];
-                $name_german = $name_latin = $name;
+                $name_german = $pdo->prepare("SELECT name FROM plants WHERE id = ".$result["id"]);
+                $name_german->execute();
+                $name_german = $name_german->fetch()[0];
+
+                $name_latin = $pdo->prepare("SELECT name_latin FROM plants WHERE id = ".$result["id"]);
+                $name_latin->execute();
+                $name_latin = $name_latin->fetch()[0];
+
+                $plant_img = $pdo->prepare("SELECT plant_img FROM plants WHERE id = ".$result["id"]);
+                $plant_img->execute();
+                $plant_img = $plant_img->fetch()[0];
+
                 $short_description = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At";
-                $plant_img = "https://thumbs-prod.si-cdn.com/EhgZKi9-p516XkxOdd2XD0JUMe8=/fit-in/1600x0/https://public-media.si-cdn.com/filer/cf/46/cf460bf8-3d66-4edc-b7a6-97195a15eb7a/lemonpot_edit.jpg";
 
                 echo "<li><div class=\"entry\">
     <img alt=\"Foto von $name_german\" src=\"$plant_img\" class=\"plant_img\"/>
