@@ -9,13 +9,13 @@
     $pdo = new PDO("mysql:host=localhost;dbname=HumiPedia", 'read', '');
     $query = "%$query%";
 
-    $statement = $pdo->prepare("SELECT id FROM plants WHERE LOWER(name) LIKE LOWER(:query)");
+    $statement = $pdo->prepare("SELECT id FROM plants WHERE LOWER(name) LIKE LOWER(:query) ORDER BY name ASC");
     $statement->bindParam(':query', $query);
 
     if ($statement->execute()) {
         $results = $statement->fetchAll();
     } else {
-        echo "Error at search.php:9";
+        echo "Error";
     }
 
 
