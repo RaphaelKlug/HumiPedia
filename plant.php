@@ -4,16 +4,17 @@
         require("db.php");
 	$result=searchq($plant_id);
     }
+	$plant_name=substr($result, strpos($result, "<h1>")+4, strpos($result, "<h1>")-strpos($result, "<h1>"-4));
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title></title>
+    <title><?=$plant_name?></title>
 </head>
 <body>
     <header>
-        <h1 id="title"><?php $plant_name ?></h1>
+        <h1 id="title"><?=$plant_name?></h1>
     </header>
 <?=$result>
 </body>
