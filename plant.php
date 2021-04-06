@@ -1,7 +1,8 @@
 <?php
     if(isset($_GET['plant_id'])) {
         $plant_id = $_GET['plant_id'];
-        $pdo = new PDO("mysql:host=localhost;dbname=HumiPedia", 'read', '');
+        require("db.php");
+	$result=searchq($plant_id);
     }
 ?>
 <!DOCTYPE html>
@@ -14,5 +15,6 @@
     <header>
         <h1 id="title"><?php $plant_name ?></h1>
     </header>
+<?=$result>
 </body>
 </html>
