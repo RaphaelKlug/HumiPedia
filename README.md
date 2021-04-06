@@ -1,2 +1,2 @@
 # HumiPedia
-By Jon, Benny and Jenny
+Original By Jon, Benny and Jenny
