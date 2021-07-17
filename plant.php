@@ -24,6 +24,6 @@
     <header>
         <h1 id="title"><?=$plant_name?></h1>
     </header>
-<?=$result>
+<?=$result?>
 </body>
 </html>
