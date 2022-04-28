@@ -1,5 +1,5 @@
 # HumiPedia
-Original By Jon, Benny and Jenny
+Not the Original
 
 ## Changes
 Management with folders, instead of MySQL. 
